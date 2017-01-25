@@ -1,0 +1,8 @@
+Thank you for your order Number [=orderid]
+
+Here is what you ordered:
+
+[=emailItems]
+
+Don't hold your breath.
+

@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Ribbon Test</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" type="text/css" href="...">
+	<style type="text/css">
+		ul#ribbon {
+			qposition: absolute;
+			font-family: sans-serif;
+			float: left;
+		}
+		ul#ribbon li {
+			background-color: yellow;
+			list-style-type: none;
+			display: block;
+			qwidth: 6em;
+			padding: .25em .5em .25em .5em;
+			border: 1px solid black;
+			border-collapse: collapse;
+			float: left;
+		}
+		ul#ribbon a {
+			/* text-decoration: none;
+			font-weight: bold; */
+		}
+		ul#ribbon li ul {
+			background-color: aqua;
+			width: 40em;
+		}
+		ul#ribbon li ul {
+			display: none;
+		}
+		ul#ribbon li.open {
+			background-color: pink;;
+		}
+		ul#ribbon li.open ul {
+			display: block;
+		}
+		ul#ribbon ul {
+			left: 0px;
+			position: absolute;
+		}
+		ul#ribbon ul li {
+			background-color: pink;
+			display: block;
+			qwidth: 10em;
+			qfloat: left;
+			border: none;
+		}
+		qul#ribbon + * {
+			clear: both;
+			color: orange;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=init;
+		var tabs=new Array();
+		function init() {
+			var ribbonId='ribbon';
+			var className='ribbon';
+			var open='open';
+
+			var ribbon=document.getElementById(ribbonId);
+			var li=ribbon.getElementsByTagName('li');
+			li=ribbon.childNodes;
+			for(var i=0;i<li.length;i++)
+				if(li[i].nodeName.toLowerCase()=='li') {
+					tabs.push(li[i]);
+					li[i].onclick=selectTab;
+					li[i].getElementsByTagName('ul')[0].onclick=nothing;
+				}
+			ribbon.nextSibling.style.clear="both";
+		}
+		function selectTab(e) {
+			e=e||window.event;
+			var target=e.target||e.srcElement||null;
+			for(var i=0;i<tabs.length;i++) tabs[i].className='';
+			target.className='open';
+			if(e.stopPropogation) e.stopPropogation();
+			else e.cancelBubble=true;
+		}
+		function nothing(e) {
+			e=e||window.event;
+			var target=e.target||e.srcElement||null;
+			//alert(target);
+			if(e.stopPropogation) e.stopPropogation();
+			else e.cancelBubble=true;
+		}
+	</script>
+</head>
+<body>
+	<h1>Ribbon Test</h1>
+	<ul id="ribbon"><li>Apples
+			<ul><li>Macintosh</li>
+				<li>Jonathon</li>
+				<li>Delicious</li>
+				<li>Granny Smith</li>
+			</ul>
+		</li>
+		<li>Animals
+			<ul><li>Aardvarks</li>
+				<li>Orang Utan</li>
+				<li>LLama</li>
+				<li>Donkey</li>
+			</ul>
+		</li>
+		<li class="open">Things
+			<ul><li>Piece of String</li>
+				<li>Leather Saxophone</li>
+				<li>Umbrella Stand</li>
+				<li><a href="http://resources.comparity.net">Thing with a Hole</a></li>
+			</ul>
+		</li>
+	</ul><h2>And it continues ...</h2>
+</body>
+</html>

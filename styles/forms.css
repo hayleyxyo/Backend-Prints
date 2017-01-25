@@ -1,0 +1,125 @@
+/*	Forms Style Sheet
+	================================================ */
+
+/*	General
+	================================================ */
+
+	label {
+		font-weight: bold;
+		color: white;
+		color: #333;
+	}
+	legend {
+		font-size: 120%;
+		font-weight: bold;
+		color: #333;
+	}
+	.adjacent {
+		float: left;
+	}
+	.clear {
+		clear: both;
+	}
+	.error {
+		color: #ff7777;
+	}
+
+
+/*	Contact
+	================================================ */
+
+	form#contact input[type="text"],
+	form#contact input[type="email"],
+	form#contact textarea {
+		width: 400px;
+		padding: .5em .75em;
+	}
+
+	form#contact textarea {
+		height: 80px;
+	}
+
+/*	Register
+	================================================ */
+
+	form#register input[type="text"],
+	form#register input[type="email"],
+	form#register input[type="password"],
+	form#contact textarea {
+		width: 400px;
+		padding: .5em .75em;
+	}
+
+/*	Contact
+	================================================ */
+
+	form#prints-details select {
+		width: 380px;
+	}
+
+	form#prints-details input[type="text"],
+	form#prints-details input[type="email"],
+	form#prints-details textarea {
+		width: 400px;
+		padding: .25em .75em;
+	}
+
+	form#prints-details textarea {
+		height: 80px;
+	}
+
+
+
+
+
+
+
+
+
+
+
+.indented {
+	margin-left: 80px;
+}
+fieldset {
+	width: 40em;
+}
+#addprints textarea {
+	height: 12em;
+	width: 24em;
+}
+select {
+	width: 100%;
+}
+form#list {
+	width: 12em;
+	float: left;
+}
+form#details {
+	float: left;
+}
+form#details fieldset {
+	width: 24em;
+}
+optgroup {
+	font-style: normal;
+}
+div.adjacent {
+	clear: both;
+}
+div.adjacent label {
+	float: left;
+}
+#changepasswordspan {
+	display: none;
+}
+/*
+div.adjacent:before {
+	content: attr(class);
+}
+*/
+/*
+select:nth-child(2n) {
+	background-color: pink;
+}
+*/
